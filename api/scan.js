@@ -2,13 +2,11 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   const { image, mimeType } = req.body;
-  
-  // Use the names without VITE_ prefix
   const apiKey = process.env.GEMINI_API_KEY; 
   const apiUrl = process.env.GEMINI_API_URL; 
 
   if (!apiKey || !apiUrl) {
-    return res.status(500).json({ error: "API Keys are missing in Vercel settings" });
+    return res.status(500).json({ error: "API Keys missing in Vercel settings" });
   }
 
   try {
