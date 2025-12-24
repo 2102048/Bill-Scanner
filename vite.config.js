@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/Bill-Scanner/',
+  //base: '/Bill-Scanner/',
   plugins: [
     react(),
     tailwindcss(),
